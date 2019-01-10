@@ -1,34 +1,46 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import styled from 'styled-components'
+
+import logoPath from '../images/icon.svg'
+
+const Wrapper = styled.div`
+  background-color: white;
+`
+
+const Logo = styled.img`
+  height: 55px;
+  display: block;
+  margin-bottom: 0px;
+  margin-right: 15px;
+  padding-bottom: 10px;
+`
+
+const InnerWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+  display: flex;
+`
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+  <Wrapper>
+    <InnerWrapper>
+      <Logo src={logoPath} alt="logo" />
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
           style={{
-            color: `white`,
+            color: `black`,
             textDecoration: `none`,
           }}
         >
           {siteTitle}
         </Link>
       </h1>
-    </div>
-  </div>
+    </InnerWrapper>
+  </Wrapper>
 )
 
 Header.propTypes = {
