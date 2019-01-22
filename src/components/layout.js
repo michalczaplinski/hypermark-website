@@ -20,6 +20,16 @@ const PageContent = styled.div`
   color: white;
 `
 
+const Footer = styled.footer`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 25px;
+  font-size: 13px;
+  background-color: white;
+  width: 100vw;
+`
+
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
@@ -35,15 +45,13 @@ const Layout = ({ children }) => (
       <>
         <Header siteTitle={data.site.siteMetadata.title} />
         <OuterWrapper>
-          <PageContent>
-            {children}
-            {/* <footer>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
-            </footer> */}
-          </PageContent>
+          <PageContent>{children}</PageContent>
         </OuterWrapper>
+        <Footer>
+          © {new Date().getFullYear()}, Created by
+          {` `}
+          <a href="https://github.com/michalczaplinski">Michal Czaplinski</a>
+        </Footer>
       </>
     )}
   />
