@@ -9,7 +9,7 @@ import './layout.css'
 const OuterWrapper = styled.div`
   width: 100%;
   height: auto;
-  background: #ffdbe8;
+  background: var(--main-color);
 `
 
 const PageContent = styled.div`
@@ -21,13 +21,30 @@ const PageContent = styled.div`
 `
 
 const Footer = styled.footer`
-  position: fixed;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 32px;
   bottom: 0;
   left: 0;
-  height: 25px;
+  padding: 0px 20px;
   font-size: 13px;
-  background-color: white;
+  background-color: #cff0ff;
   width: 100vw;
+  font-weight: 600;
+`
+
+const PersonalLink = styled.a`
+  display: block;
+  font-size: 13px;
+  margin-left: 6px;
+  margin-right: 6px;
+`
+
+const Emoji = styled.div`
+  font-size: 20px;
+  margin-left: 4px;
+  margin-right: 2px;
 `
 
 const Layout = ({ children }) => (
@@ -48,9 +65,15 @@ const Layout = ({ children }) => (
           <PageContent>{children}</PageContent>
         </OuterWrapper>
         <Footer>
-          © {new Date().getFullYear()}, Created by
-          {` `}
-          <a href="https://github.com/michalczaplinski">Michal Czaplinski</a>
+          Made with
+          <Emoji role="img"> ✌️ </Emoji>
+          &
+          <Emoji role="img"> ☕️️ </Emoji>
+          by
+          <PersonalLink href="https://github.com/michalczaplinski">
+            Michal Czaplinski
+          </PersonalLink>
+          <span>in Berlin, Kampala & Lima.</span>
         </Footer>
       </>
     )}

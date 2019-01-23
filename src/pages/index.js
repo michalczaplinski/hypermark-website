@@ -25,8 +25,8 @@ const Row = styled.div`
 const TextContainer = styled.div`
   display: flex;
   flex-flow: column;
-  color: #383838;
-  max-width: 420px;
+  color: var(--dark-color);
+  max-width: 450px;
   min-width: 300px;
   width: auto;
   padding: 20px;
@@ -61,12 +61,12 @@ const DownloadButton = styled.button`
   margin: 0;
   padding: 10px 21px;
   border-radius: 5px;
-  border: 2px solid #383838;
+  border: 2px solid var(--dark-color);
 
   &:hover {
-    background-color: #383838;
+    background-color: var(--dark-color);
     color: white;
-    border-color: #383838;
+    border-color: var(--dark-color);
     cursor: pointer;
   }
 
@@ -97,11 +97,10 @@ const IndexPage = () => (
       </ImageContainer>
       <TextContainer>
         <Paragraph>
-          <Tagline>Manager for your markdown notes.</Tagline>
-          <div>• Instant Search</div>
+          <Tagline> A manager for your markdown notes.</Tagline>
+          <div>• Instant search</div>
           <div>• Bring your own notes</div>
           <div>• Markdown-first</div>
-          <div>• Dark-mode enabled</div>
         </Paragraph>
         <DownloadButton>
           {' '}

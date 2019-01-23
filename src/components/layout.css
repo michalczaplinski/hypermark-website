@@ -3,6 +3,11 @@
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
+:root {
+  --main-color: #ffdbe8;
+  --dark-color: #383838;
+  --footer-color: #cff0ff;
+}
 
 html {
   font-family: sans-serif;
