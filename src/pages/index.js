@@ -125,7 +125,7 @@ const IndexPage = () => (
             <div>✅ Bring your own notes </div>
           </ParagraphContent>
         </Paragraph>
-        <Link href="https://github.com/michalczaplinski/hypermark/releases/download/0.3.0/Hypermark-0.3.0.dmg">
+        <Link href="https://github.com/michalczaplinski/hypermark/releases/download/0.6.0/Hypermark-0.6.0.dmg">
           <DownloadButton>
             {' '}
             <AppleLogo src={apple} fill="white" /> Download for MacOS{' '}
