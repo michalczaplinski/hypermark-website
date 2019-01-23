@@ -11,7 +11,7 @@ const breakpoint = `700px`
 
 const Row = styled.div`
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   height: 100%;
   width: 100%;
   padding-top: 30px;
