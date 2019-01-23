@@ -16,7 +16,7 @@ const Row = styled.div`
   width: 100%;
   padding-top: 30px;
   @media screen and (max-width: ${breakpoint}) {
-    padding-top: 23px;
+    padding-top: 27px;
     flex-flow: column;
     align-items: center;
   }
@@ -43,18 +43,19 @@ const TextContainer = styled.div`
 
 const Tagline = styled.h3`
   width: 100%;
-  line-height: 1.4;
-  font-size: 23px;
-  margin-bottom: 20px;
+  line-height: 1.3;
+  margin-bottom: 14px;
 
   @media screen and (max-width: ${breakpoint}) {
+    margin-bottom: 18px;
+    font-size: 29px;
     text-align: center;
   }
 `
 
 const Paragraph = styled.div`
   line-height: 2;
-  margin-bottom: 30px;
+  margin-bottom: 24px;
 
   @media screen and (max-width: ${breakpoint}) {
     display: flex;
@@ -118,7 +119,7 @@ const IndexPage = () => (
       </ImageContainer>
       <TextContainer>
         <Paragraph>
-          <Tagline> A manager for your markdown notes.</Tagline>
+          <Tagline> Manager for your markdown notes </Tagline>
           <ParagraphContent>
             <div>✅ Markdown-first </div>
             <div>✅ Instant search </div>
