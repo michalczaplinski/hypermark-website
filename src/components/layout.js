@@ -21,27 +21,27 @@ const PageContent = styled.div`
 `
 
 const Footer = styled.footer`
-  position: absolute;
-  display: flex;
-  align-items: center;
-  height: 32px;
+  min-height: 45px;
+  text-align: center;
   bottom: 0;
   left: 0;
-  padding: 0px 20px;
+  padding: 8px 20px;
+  line-height: 1.5;
   font-size: 13px;
   background-color: #cff0ff;
   width: 100vw;
-  font-weight: 600;
+  font-weight: 500;
 `
 
 const PersonalLink = styled.a`
-  display: block;
+  display: inline-block;
   font-size: 13px;
-  margin-left: 6px;
-  margin-right: 6px;
+  margin-left: 4px;
+  margin-right: 4px;
 `
 
-const Emoji = styled.div`
+const Emoji = styled.span`
+  display: inline-block;
   font-size: 20px;
   margin-left: 4px;
   margin-right: 2px;

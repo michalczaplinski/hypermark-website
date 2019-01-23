@@ -14,7 +14,7 @@ const Logo = styled.img`
   display: block;
   margin-bottom: 0px;
   margin-right: 15px;
-  padding-bottom: 5px;
+  padding-bottom: 2px;
 `
 
 const InnerWrapper = styled.div`

@@ -16,7 +16,7 @@ const Row = styled.div`
   width: 100%;
   padding-top: 30px;
   @media screen and (max-width: ${breakpoint}) {
-    padding-top: 15px;
+    padding-top: 23px;
     flex-flow: column;
     align-items: center;
   }
@@ -30,12 +30,14 @@ const TextContainer = styled.div`
   min-width: 300px;
   width: auto;
   padding: 20px;
+  padding-top: 23px;
 
   @media screen and (max-width: ${breakpoint}) {
     max-width: 100%;
-    padding-top: 0;
+    padding-top: 10px;
     padding-left: 30px;
     padding-right: 30px;
+    align-items: center;
   }
 `
 
@@ -43,13 +45,28 @@ const Tagline = styled.h3`
   width: 100%;
   line-height: 1.4;
   font-size: 23px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
+
+  @media screen and (max-width: ${breakpoint}) {
+    text-align: center;
+  }
 `
 
 const Paragraph = styled.div`
   line-height: 2;
-  margin-bottom: 25px;
-  padding-left: 5px;
+  margin-bottom: 30px;
+
+  @media screen and (max-width: ${breakpoint}) {
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    text-align: left;
+  }
+`
+
+const ParagraphContent = styled.div`
+  margin-left: 8px;
 `
 
 const DownloadButton = styled.button`
@@ -79,6 +96,10 @@ const ImageContainer = styled.div`
   max-width: 100%;
 `
 
+const Link = styled.a`
+  text-decoration: none;
+`
+
 const AppleLogo = styled.img`
   padding-bottom: 0;
   margin-right: 12px;
@@ -98,14 +119,18 @@ const IndexPage = () => (
       <TextContainer>
         <Paragraph>
           <Tagline> A manager for your markdown notes.</Tagline>
-          <div>• Instant search</div>
-          <div>• Bring your own notes</div>
-          <div>• Markdown-first</div>
+          <ParagraphContent>
+            <div>✅ Markdown-first </div>
+            <div>✅ Instant search </div>
+            <div>✅ Bring your own notes </div>
+          </ParagraphContent>
         </Paragraph>
-        <DownloadButton>
-          {' '}
-          <AppleLogo src={apple} fill="white" /> Download for MacOS{' '}
-        </DownloadButton>
+        <Link href="https://github.com/michalczaplinski/hypermark/releases/download/0.3.0/Hypermark-0.3.0.dmg">
+          <DownloadButton>
+            {' '}
+            <AppleLogo src={apple} fill="white" /> Download for MacOS{' '}
+          </DownloadButton>
+        </Link>
       </TextContainer>
     </Row>
   </Layout>
