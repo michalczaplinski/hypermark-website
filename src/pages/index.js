@@ -80,6 +80,7 @@ const DownloadButton = styled.button`
   padding: 10px 21px;
   border-radius: 5px;
   border: 2px solid var(--dark-color);
+  background-color: white;
 
   &:hover {
     background-color: var(--dark-color);
@@ -121,12 +122,12 @@ const IndexPage = () => (
         <Paragraph>
           <Tagline> Manager for your markdown notes </Tagline>
           <ParagraphContent>
-            <div>✅ Markdown-first </div>
-            <div>✅ Instant search </div>
-            <div>✅ Bring your own notes </div>
+            <div>👉 Markdown-first </div>
+            <div>👉 Instant search </div>
+            <div>👉 Bring your own notes </div>
           </ParagraphContent>
         </Paragraph>
-        <Link href="https://github.com/michalczaplinski/hypermark/releases/download/0.6.0/Hypermark-0.6.0.dmg">
+        <Link href="https://github.com/michalczaplinski/hypermark/releases/download/v0.6.0/Hypermark-0.6.0.dmg">
           <DownloadButton>
             {' '}
             <AppleLogo src={apple} fill="white" /> Download for MacOS{' '}
