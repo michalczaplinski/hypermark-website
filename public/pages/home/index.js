@@ -165,9 +165,9 @@ const IndexPage = () => (
   <Layout>
     <Row>
       <ImageContainer>
-        <picture>
+        <picture height="456" width="500">
           <source srcset="images/app.webp" type="image/webp" />
-          <img src="images/app.jpg" alt="hypermark " />
+          <img src="images/app.jpg" alt="hypermark demo" />
         </picture>
 
         {/* <Image src="images/app.png" width="500" /> */}
