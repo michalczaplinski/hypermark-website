@@ -2,3 +2,7 @@
 [build.environment]
   RUBY_VERSION = "2.7.4"
 
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200

@@ -5,6 +5,7 @@ import {
   lazy,
   ErrorBoundary,
   hydrate,
+  prerender as ssr,
 } from "preact-iso";
 import Home from "./pages/home/index.js";
 import NotFound from "./pages/_404.js";
@@ -34,8 +35,7 @@ export function App() {
 hydrate(<App />);
 
 export async function prerender(data) {
-  const { default: prerender } = await import("preact-iso/prerender");
-  const res = await prerender(<App {...data} />);
+  const res = await ssr(<App {...data} />);
   const css = extractCss();
 
   res.html = `<style id="_goober"> ${css}</style>${res.html}`;
