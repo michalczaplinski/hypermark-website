@@ -1,0 +1,4 @@
+# Workaround for: https://github.com/netlify/build-image/issues/599
+[build.environment]
+  RUBY_VERSION = "2.7.4"
+
