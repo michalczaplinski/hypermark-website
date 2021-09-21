@@ -1,5 +1,5 @@
 .cache
 node_modules
-dist
+
 stats.html
 .DS_Store
