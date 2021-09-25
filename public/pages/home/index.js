@@ -1,5 +1,6 @@
 import { styled } from "goober";
 import Header from "../../header";
+import { useEffect, useState } from "preact/hooks";
 
 const breakpoint = `700px`;
 
@@ -161,34 +162,51 @@ const Layout = ({ children }) => (
   </>
 );
 
-const IndexPage = () => (
-  <Layout>
-    <Row>
-      <ImageContainer>
-        <picture height="456" width="500">
-          <source srcset="images/app.webp" type="image/webp" />
-          <img src="images/app.jpg" alt="hypermark demo" />
-        </picture>
+const IndexPage = () => {
+  const [repo, setRepo] = useState("");
 
-        {/* <Image src="images/app.png" width="500" /> */}
-      </ImageContainer>
-      <TextContainer>
-        <Paragraph>
-          <Tagline> Manager for your markdown notes </Tagline>
-          <ParagraphContent>
-            <div>👉 Markdown-first </div>
-            <div>👉 Instant search </div>
-            <div>👉 Bring your own notes </div>
-          </ParagraphContent>
-        </Paragraph>
-        <Link href="https://github.com/michalczaplinski/hypermark/releases/download/v0.7.0/Hypermark-0.7.0.dmg">
-          <DownloadButton>
-            <AppleLogo src="images/apple.svg"></AppleLogo>Download for MacOS
-          </DownloadButton>
-        </Link>
-      </TextContainer>
-    </Row>
-  </Layout>
-);
+  useEffect(() => {
+    fetch(
+      `https://api.github.com/repos/michalczaplinski/hypermark/releases/latest`
+    )
+      .then((res) => res.json())
+      .then((data) => {
+        const asset = data?.assets.find(
+          ({ name }) => name && name.slice(-4) === ".dmg"
+        );
+        setRepo(asset.browser_download_url);
+      });
+  }, []);
+
+  return (
+    <Layout>
+      <Row>
+        <ImageContainer>
+          <picture height="456" width="500">
+            <source srcset="images/app.webp" type="image/webp" />
+            <img src="images/app.jpg" alt="hypermark demo" />
+          </picture>
+
+          {/* <Image src="images/app.png" width="500" /> */}
+        </ImageContainer>
+        <TextContainer>
+          <Paragraph>
+            <Tagline> Manager for your markdown notes </Tagline>
+            <ParagraphContent>
+              <div>👉 Markdown-first </div>
+              <div>👉 Instant search </div>
+              <div>👉 Bring your own notes </div>
+            </ParagraphContent>
+          </Paragraph>
+          <Link href={repo}>
+            <DownloadButton>
+              <AppleLogo src="images/apple.svg"></AppleLogo>Download for MacOS
+            </DownloadButton>
+          </Link>
+        </TextContainer>
+      </Row>
+    </Layout>
+  );
+};
 
 export default IndexPage;
